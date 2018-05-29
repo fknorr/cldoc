@@ -23,6 +23,8 @@ class Field(Node):
         self.type = Type(cursor.type, cursor=cursor)
 
     def compare_same(self, other):
+        def cmp(a, b):
+            return (a > b) - (a < b)
         return cmp(self.sort_index, other.sort_index)
 
 # vi:ts=4:et
