@@ -83,7 +83,7 @@ class Argument:
         return False
 
 class Function(Node):
-    kind = cindex.CursorKind.FUNCTION_DECL
+    kinds = [cindex.CursorKind.FUNCTION_DECL]
 
     def __init__(self, cursor, comment):
         super(Function, self).__init__(cursor, comment)

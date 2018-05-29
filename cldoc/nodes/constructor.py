@@ -15,7 +15,7 @@ from .method import Method
 from ..clang import cindex
 
 class Constructor(Method):
-    kind = cindex.CursorKind.CONSTRUCTOR
+    kinds = [cindex.CursorKind.CONSTRUCTOR]
 
     def __init__(self, cursor, comment):
         Method.__init__(self, cursor, comment)

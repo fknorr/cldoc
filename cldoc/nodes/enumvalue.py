@@ -16,7 +16,7 @@ from ..clang import cindex
 from ..cmp import cmp
 
 class EnumValue(Node):
-    kind = cindex.CursorKind.ENUM_CONSTANT_DECL
+    kinds = [cindex.CursorKind.ENUM_CONSTANT_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)

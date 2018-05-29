@@ -16,7 +16,7 @@ from ..clang import cindex
 from ..cmp import cmp
 
 class Union(Node):
-    kind = cindex.CursorKind.UNION_DECL
+    kinds = [cindex.CursorKind.UNION_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)

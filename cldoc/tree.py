@@ -97,8 +97,9 @@ class Tree(documentmerger.DocumentMerger):
         # Create a map from CursorKind to classes representing those cursor
         # kinds.
         for cls in nodes.Node.subclasses():
-            if hasattr(cls, 'kind'):
-                self.kindmap[cls.kind] = cls
+            if hasattr(cls, 'kinds'):
+                for kind in cls.kinds:
+                    self.kindmap[kind] = cls
 
         self.root = nodes.Root()
 

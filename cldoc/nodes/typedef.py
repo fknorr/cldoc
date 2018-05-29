@@ -16,7 +16,7 @@ from .ctype import Type
 from ..clang import cindex
 
 class Typedef(Node):
-    kind = cindex.CursorKind.TYPEDEF_DECL
+    kinds = [cindex.CursorKind.TYPEDEF_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)

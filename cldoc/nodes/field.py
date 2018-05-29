@@ -16,7 +16,7 @@ from .ctype import Type
 from ..clang import cindex
 
 class Field(Node):
-    kind = cindex.CursorKind.FIELD_DECL
+    kinds = [cindex.CursorKind.FIELD_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)
