@@ -98,7 +98,7 @@ if sys.version_info[0] == 3:
         def value(self):
             if super(c_char_p, self).value is None:
                 return None
-            return super(c_char_p, self).value.decode("utf8")
+            return super(c_char_p, self).value.decode("utf8", errors="replace")
 
         @classmethod
         def from_param(cls, param):
