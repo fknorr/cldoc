@@ -16,7 +16,7 @@ from .ctype import Type
 from ..clang import cindex
 
 class Variable(Node):
-    kind = cindex.CursorKind.VAR_DECL
+    kinds = [cindex.CursorKind.VAR_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)

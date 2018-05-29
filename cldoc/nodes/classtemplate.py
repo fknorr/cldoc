@@ -18,19 +18,22 @@ from .templated import Templated
 from ..clang import cindex
 
 class StructTemplate(Struct, Templated):
-    kind = None
+    kinds = []
 
     def __init__(self, cursor, comment):
         super(StructTemplate, self).__init__(cursor, comment)
 
 class ClassTemplate(Class, Templated):
-    kind = None
+    kinds = []
 
     def __init__(self, cursor, comment):
         super(ClassTemplate, self).__init__(cursor, comment)
 
 class ClassTemplatePlexer(Node):
-    kind = cindex.CursorKind.CLASS_TEMPLATE
+    kinds = [
+        cindex.CursorKind.CLASS_TEMPLATE,
+        cindex.CursorKind.CLASS_TEMPLATE_PARTIAL_SPECIALIZATION,
+    ]
 
     def __new__(cls, cursor, comment):
         # Check manually if this is actually a struct, so that we instantiate

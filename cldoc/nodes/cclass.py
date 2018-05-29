@@ -17,7 +17,7 @@ from .ctype import Type
 from ..clang import cindex
 
 class Class(Node):
-    kind = cindex.CursorKind.CLASS_DECL
+    kinds = [cindex.CursorKind.CLASS_DECL]
 
     class Base:
         def __init__(self, cursor, access=cindex.AccessSpecifier.PUBLIC):

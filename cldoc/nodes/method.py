@@ -17,7 +17,7 @@ from ..clang import cindex
 from ..comment import Comment
 
 class Method(Function):
-    kind = cindex.CursorKind.CXX_METHOD
+    kinds = [cindex.CursorKind.CXX_METHOD]
 
     def __init__(self, cursor, comment):
         super(Method, self).__init__(cursor, comment)

@@ -15,7 +15,7 @@ from .node import Node
 from ..clang import cindex
 
 class Enum(Node):
-    kind = cindex.CursorKind.ENUM_DECL
+    kinds = [cindex.CursorKind.ENUM_DECL]
 
     def __init__(self, cursor, comment):
         Node.__init__(self, cursor, comment)

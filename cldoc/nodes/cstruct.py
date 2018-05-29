@@ -15,7 +15,7 @@ from .cclass import Class
 from ..clang import cindex
 
 class Struct(Class):
-    kind = cindex.CursorKind.STRUCT_DECL
+    kinds = [cindex.CursorKind.STRUCT_DECL]
 
     def __init__(self, cursor, comment):
         Class.__init__(self, cursor, comment)
